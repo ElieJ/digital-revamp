@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KeyMetricsComponent } from './key-metrics.component';
+import { CdkDragDropConnectedSortingGroupExample } from './key-metrics.component';
 
-describe('KeyMetricsComponent', () => {
-  let component: KeyMetricsComponent;
-  let fixture: ComponentFixture<KeyMetricsComponent>;
+describe('CdkDragDropConnectedSortingGroupExample', () => {
+  let component: CdkDragDropConnectedSortingGroupExample;
+  let fixture: ComponentFixture<CdkDragDropConnectedSortingGroupExample>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KeyMetricsComponent]
+      imports: [CdkDragDropConnectedSortingGroupExample]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(KeyMetricsComponent);
+    fixture = TestBed.createComponent(CdkDragDropConnectedSortingGroupExample);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
