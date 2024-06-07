@@ -1,10 +1,45 @@
-<!-- src/app/project-details/project-details.component.html -->
-<h2>Project details</h2>
-<div *ngIf="project">
-  <h3>{{ project.name }}</h3>
-  <p>Owner: <input [(ngModel)]="project.owner"></p>
-  <p>Start Date: <input type="date" [(ngModel)]="project.startDate"></p>
-  <p>Deadline: <input type="date" [(ngModel)]="project.deadline"></p>
-  <button (click)="updateProject()">Update</button>
+<div class="project-details-container">
+  <h2>Project Details</h2>
+
+  <div class="tasks-section">
+    <h3>Tasks</h3>
+    <ul class="task-list">
+      <li *ngFor="let task of tasks" class="task-item">
+        <div class="task-info">
+          <h4>{{ task.title }}</h4>
+          <p>{{ task.description }}</p>
+          <p><strong>Due Date:</strong> {{ task.dueDate }}</p>
+        </div>
+        <div class="task-actions">
+          <button class="edit-button" (click)="editTask(task)">Edit</button>
+          <button class="delete-button" (click)="deleteTask(task.id)">Delete</button>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="tasks.length === 0">
+      <p>No tasks found for this project.</p>
+    </div>
+  </div>
+
+  <div class="task-form">
+    <h3>{{ editingTask ? 'Edit Task' : 'Add Task' }}</h3>
+    <form (ngSubmit)="saveTask()">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" [(ngModel)]="taskForm.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" id="description" [(ngModel)]="taskForm.description" name="description" required>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" [(ngModel)]="taskForm.dueDate" name="dueDate" required>
+      </div>
+      <div class="form-actions">
+        <button type="submit">{{ editingTask ? 'Update' : 'Add' }} Task</button>
+        <button type="button" class="cancel-button" (click)="cancelEdit()" *ngIf="editingTask">Cancel</button>
+      </div>
+    </form>
+  </div>
 </div>
-<!-- <p>project details!</p> -->

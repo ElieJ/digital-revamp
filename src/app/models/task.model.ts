@@ -1,10 +1,13 @@
-// src/app/models/task.model.ts
+export interface TaskRequest {
+  title: string;
+  description: string;
+  dueDate: string;
+  projectId: number;
+}
 export interface Task {
-    id: string;
-    projectId: string;
-    name: string;
-    priority: string;
-    dueDate: string;
-    status: string
-  }
-  
+  id: number
+  title: string;
+  description: string;
+  dueDate: string;
+  projectId: number;
+}
