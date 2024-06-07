@@ -1,8 +1,10 @@
+<!-- src/app/project-details/project-details.component.html -->
+<h2>Project details</h2>
 <div *ngIf="project">
-    <h3>{{ project.name }}</h3>
-    <p>Owner: <input [(ngModel)]="project.owner"></p>
-    <p>Start Date: <input type="date" [(ngModel)]="project.startDate"></p>
-    <p>Deadline: <input type="date" [(ngModel)]="project.deadline"></p>
-    <button (click)="updateProject()">Update</button>
-  </div>
-  
+  <h3>{{ project.name }}</h3>
+  <p>Owner: <input [(ngModel)]="project.owner"></p>
+  <p>Start Date: <input type="date" [(ngModel)]="project.startDate"></p>
+  <p>Deadline: <input type="date" [(ngModel)]="project.deadline"></p>
+  <button (click)="updateProject()">Update</button>
+</div>
+<!-- <p>project details!</p> -->

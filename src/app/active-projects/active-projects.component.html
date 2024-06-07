@@ -1,7 +1,18 @@
 <!-- src/app/active-projects/active-projects.component.html -->
-<h2>Active Projects</h2>
-<div *ngFor="let project of activeProjects">
-  <h3>{{ project.name }}</h3>
-  <p>Completion: {{ project.completionPercentage }}%</p>
-  <p>Overdue Tasks: {{ project.overdueTasks }}</p>
+<div class="active-projects-container">
+  <h2>Active Projects</h2>
+  <ul class="project-list">
+    <li *ngFor="let project of activeProjects" class="project-item">
+      <div class="project-header">
+        <h3>{{ project.name }}</h3>
+        <span class="project-status">{{ project.status }}</span>
+      </div>
+      <div class="project-details">
+        <p><strong>Completion:</strong> {{ project.completionPercentage }}%</p>
+        <p><strong>Owner:</strong> {{ project.owner }}</p>
+        <p><strong>Start Date:</strong> {{ project.startDate | date:'longDate' }}</p>
+        <p><strong>Deadline:</strong> {{ project.deadline | date:'longDate' }}</p>
+      </div>
+    </li>
+  </ul>
 </div>

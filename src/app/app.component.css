@@ -1,0 +1,35 @@
+nav {
+    background-color: #333;
+    padding: 1em;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list li {
+    margin: 0 1em;
+  }
+
+  .nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-list a:hover {
+    background-color: #575757;
+    color: #fff;
+  }
+
+  .nav-list a.active {
+    background-color: #1a73e8;
+    color: #fff;
+  }
