@@ -1,0 +1,7 @@
+<!-- src/app/active-projects/active-projects.component.html -->
+<h2>Active Projects</h2>
+<div *ngFor="let project of activeProjects">
+  <h3>{{ project.name }}</h3>
+  <p>Completion: {{ project.completionPercentage }}%</p>
+  <p>Overdue Tasks: {{ project.overdueTasks }}</p>
+</div>
